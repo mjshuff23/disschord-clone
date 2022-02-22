@@ -7,7 +7,7 @@ COPY frontend/. .
 ENV REACT_APP_BASE_URL="https://disschord.herokuapp.com"
 
 # Build our React App
-RUN npm installs
+RUN npm install
 RUN npm run build
 
 
