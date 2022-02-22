@@ -9,6 +9,7 @@ CMD ["npm", "start"]
 WORKDIR /frontend
 COPY frontend/. .
 RUN npm install
+RUN npm run build
 
 # You have to set this because it should be set during build time.
 ENV REACT_APP_BASE_URL="https://disschord.herokuapp.com"
