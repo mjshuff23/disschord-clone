@@ -1,5 +1,11 @@
 FROM node:12 AS build-stage
 
+# Install backend dependencies
+WORKDIR /backend
+COPY backend/. .
+RUN npm install
+CMD ["npm", "start"]
+
 WORKDIR /frontend
 COPY frontend/. .
 
@@ -20,9 +26,5 @@ WORKDIR /var/www
 COPY . .
 COPY --from=build-stage /frontend/build/* app/static/
 
-# Install backend dependencies
-WORKDIR /backend
-COPY backend/. .
-RUN npm install
-CMD ["npm", "start"]
+
 
