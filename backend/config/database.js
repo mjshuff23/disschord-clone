@@ -15,6 +15,12 @@ module.exports = {
     database,
     host,
     dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // <<<<<<< YOU NEED THIS
+      },
+    },
     use_env_variable: 'DATABASE_URL',
   },
   test: {
