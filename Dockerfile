@@ -24,5 +24,4 @@ COPY --from=build-stage /frontend/build/* app/static/
 WORKDIR /backend
 COPY backend/. .
 RUN npm install
-RUN npm start
 
